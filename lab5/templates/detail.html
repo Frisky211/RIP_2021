@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if phone %}
+    Модель: {{ phone.model }} <br>
+    Производитель: {{ phone.manufactid }} <br>
+    Диагональ экрана: {{ phone.diag }}  <br>
+    Емкость аккумулятора: {{ phone.capacity}}<br>
+    <a href="{% url 'phones:phonesList' %}">Назад</a>
+{% else %}
+    Компания: {{ manufacturer.name }} <br>
+    Страна: {{ manufacturer.country }} <br>
+    <a href="{% url 'phones:manufacList' %}">Назад</a>
+
+{% endif %}
+</body>
+</html>

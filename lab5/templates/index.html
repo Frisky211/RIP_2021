@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if phones %}
+    {% for phone in phones %}
+        <li> <a href="{% url 'phones:phonesDetail' phone.idphone %}"> {{ phone.model }} </a> </li>
+    {% endfor %}
+{% else %}
+    {% for manufac in manufacs %}
+        <li> <a href="{% url 'phones:manufacDetail' manufac.idmanufacturer %}"> {{ manufac.name }} </a></li>
+    {% endfor %}
+{% endif %}
+<a href="{% url 'phones:main' %}">На главную</a>
+
+</body>
+</html>
