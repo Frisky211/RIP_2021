@@ -1,0 +1,23 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'phones/style.css' %}">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о телефоне {{ phone }}</title>
+</head>
+<body>
+<table border="1px">
+    <tr> <td rowspan="6"><img alt='{{ phone }}' src='{% static 'phones/images' %}/{{ phone.image.name }}'></td>
+         <td>Модель: {{ phone.model_name }}</td>
+    </tr>
+    <tr> <td>Производитель: {{ phone.manufacturer }}</td> </tr>
+    <tr> <td>Дата выпуска: {{ phone.release_date }}</td> </tr>
+    <tr> <td>Операционная система: {{ phone.os }}</td> </tr>
+    <tr> <td>Диагональ экрана(мм): {{ phone.display_diagonal }}</td> </tr>
+    <tr> <td>Емкость аккумулятора: {{ phone.battery_capacity }}</td> </tr>
+</table>
+<p> <a href="{% url 'phones:index' %}"> На главную </a> </p>
+</body>
+</html>
