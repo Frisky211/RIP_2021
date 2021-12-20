@@ -1,0 +1,58 @@
+html{
+    background: #27296D;
+}
+
+.content{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main-header{
+    height: 50px;
+    width: 100%;
+    background: #464986;
+}
+
+#header-text{
+    display: inline-block;
+    padding-top: 7px;
+    font-size: 30px;
+    background: rgba(132,180,200,0);
+}
+
+.lib-name__header {
+    background: #5E63B6;
+    display: block;
+    font-size: 24px;
+}
+
+.cd-line:nth-child(odd){
+    background: #A393EB;
+}
+
+.cd-line:nth-child(even){
+    background: #F5C7F7;
+}
+
+.lib-name__header .CRUD-btn{
+    position: relative;
+    margin-left: 40%;
+    bottom: 15px;
+}
+
+.lib-name__text{
+    display:inline;
+    position: relative;
+    top: 14px
+}
+
+li .CRUD-btn{
+    position: relative;
+    margin-left: 40%;
+    bottom: 9px;
+}
+
+li{
+    font-size: 16px;
+    display: block;
+}
