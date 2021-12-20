@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Не надо</title>
+</head>
+<body>
+{% block content %}
+    <h1>Удалить данные</h1>
+    <form action="" method="post">{% csrf_token %}
+      <p>Вы точно хотите удалить "{{ cd.name }}{{ lib.name }}"?</p>
+      <input type="submit" value="Точно" />
+    </form>
+{% endblock content %}
+</body>
+</html>

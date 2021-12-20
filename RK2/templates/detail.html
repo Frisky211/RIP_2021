@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img alt="{{ cd.cover.url }}" src="{{ cd.cover.url }}"><br>
+{{ cd.name }}<br>
+{{ cd.capacity }}
+<br>
+<a href="{% url 'CDLib:report' %}"> <button type="button">К отчету</button></a>
+</body>
+</html>

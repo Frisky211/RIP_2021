@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CD свалка</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CDLib/style.css' %}">
+</head>
+<body>
+
+<div class="main-header">
+    <div id="header-text">Здесь можно найти много разных дисков! </div>
+    <div class="CRUD-btn" style="margin-left: 60%; margin-top: -25px;">
+            <a href="{% url 'CDLib:crtCD' %}"> <button type="button">Создать диск</button></a>
+            <a href="{% url 'CDLib:crtLib' %}"> <button type="button">Создать раздел</button></a>
+    </div>
+</div>
+<div class="content">
+{% for lib, cds in data.items %}
+    <div class="lib-name__header"><div class="lib-name__text">Раздел {{ lib }}</div>
+        <div class="CRUD-btn">
+            <a href="{% url 'CDLib:updLib' lib.id %}"> <button type="button" class="upd-lib__btn">Изменить</button></a>
+            <a href="{% url 'CDLib:delLib' lib.id %}"> <button type="button" class="del-lib__btn">Удалить</button></a>
+        </div>
+    </div>
+    <div class="cd-list">
+        {% for cd in cds %}
+            <li class="cd-line">{{ cd.name }}, {{ cd.capacity }} Мб
+                <div class="CRUD-btn">
+                    <a href="{% url 'CDLib:detail' cd.id %}"> <button type="button" class="det-cd__btn">Просмотр</button></a>
+                    <a href="{% url 'CDLib:updCD' cd.id %}"> <button type="button" class="upd-cd__btn">Изменить</button></a>
+                    <a href="{% url 'CDLib:delCD' cd.id %}"> <button type="button" class="del-cd__btn">Удалить</button></a>
+                </div>
+            </li>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>
+
+</body>
+</html>
