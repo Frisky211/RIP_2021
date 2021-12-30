@@ -3,7 +3,6 @@ class Ajax {
         const response = await fetch(url, {
             method: "GET"
         });
-        console.log()
         const responseData = await response.json();
 
         return {

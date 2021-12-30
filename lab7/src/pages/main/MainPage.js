@@ -1,5 +1,5 @@
-import {StockCardComponent} from "../../components/stock-card/StockCardComponents.js";
-import {StockPage} from "../stock/StockPage.js";
+import {PhoneCardComponent} from "../../components/phone-card/PhoneCardComponents.js";
+import {PhonePage} from "../phone/PhonePage.js";
 import {ajax} from "../../modules/ajax.js";
 import {urls} from "../../modules/urls.js";
 
@@ -27,8 +27,8 @@ export class MainPage {
     clickCard(e) {
         const cardId = e.target.dataset.id
 
-        const stockPage = new StockPage(this.parent, cardId)
-        stockPage.render()
+        const phonePage = new PhonePage(this.parent, cardId)
+        phonePage.render()
     }
 
     async render() {
@@ -38,8 +38,8 @@ export class MainPage {
 
         const data = await this.getData()
         data.data.forEach((item) => {
-            const stockCard = new StockCardComponent(this.page)
-            stockCard.render(item, this.clickCard.bind(this))
+            const phoneCard = new PhoneCardComponent(this.page)
+            phoneCard.render(item, this.clickCard.bind(this))
         })
     }
 }
