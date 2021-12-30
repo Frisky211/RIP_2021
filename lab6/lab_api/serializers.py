@@ -5,7 +5,7 @@ class PhoneSerializer(serializers.ModelSerializer):
     class Meta:
         model = Phone
         fields = ['idphone', 'model', 'description', 'diag', 'capacity', 'manufacturer']
-        depth = 1
+        depth = 0
 
 class ManufacturerSerializer(serializers.ModelSerializer):
     class Meta:
