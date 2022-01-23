@@ -1,0 +1,24 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <div class="container">
+    <div class="card mb-3" style="max-width: 540px; margin: 0 auto;" >
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img src="{{ phone.image.url }}" class="img-fluid rounded-start" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{ phone.model }}</h5>
+                    <p class="card-text">
+                        Производитель: {{ phone.manufacturer }} <br>
+                        Цена: {{ phone.price }} <br>
+                        Емкость аккумулятора: {{ phone.capacity }} <br>
+                        Диагональ экрана: {{ phone.diag }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
